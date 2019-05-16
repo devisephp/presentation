@@ -13,6 +13,14 @@
       <link href=/devise/css/styles.css rel=stylesheet>
     @endif
 
+    @if(App::environment() == 'production' || App::environment() == 'staging' )
+      <style><?php echo File::get( public_path( vuemix('/css/chunk-vendors.css', '/app') ) ) ?></style>
+      <style><?php echo File::get( public_path( vuemix('/css/essentials.css', '/app') ) ) ?></style>
+    @else
+      <link rel="stylesheet" href="{{vuemix('/css/chunk-vendors.css', '/app')}}">
+      <link rel="stylesheet" href="{{vuemix('/css/essentials.css', '/app')}}">
+    @endif
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +42,25 @@
         </div>
     </div>
 
-    <script rel="prefetch" src="{{vuemix('js/chunk-vendors.js', '/devise')}}"></script>
-    <script rel="prefetch" src="{{vuemix('js/main.js', '/devise')}}"></script>
+    <script rel="prefetch" src="{{vuemix('/js/chunk-vendors.js', '/app')}}"></script>
+    <script rel="prefetch" src="{{vuemix('/js/app.js', '/app')}}"></script>
+
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" href="{{vuemix('/css/global.css', '/app')}}">
+    </noscript>
+
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
   </body>
 </html>
