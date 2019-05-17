@@ -18,13 +18,25 @@ import store from "./store";
 import router from "./router";
 import EventBus from "./event-bus";
 
+// Ugh... Reveal requires this for plugins to work
+window.Reveal = require("reveal.js/js/reveal");
+
 /**
  * Import any global components that we need
  * You'll need to name the tag, provide the chunk name, and point it to the
  * single file component file
  */
 // eslint-disable-next-line max-len
-// Vue.component('my-component', () => import(/* webpackChunkName: "app-ui" */ './components/MyComponent.vue'));
+Vue.component("reveal-presentation", () =>
+    import(
+        /* webpackChunkName: "app-presentation" */ "./components/RevealPresentation.vue"
+    )
+);
+Vue.component("side-gradient", () =>
+    import(
+        /* webpackChunkName: "app-presentation" */ "./components/SideGradient.vue"
+    )
+);
 
 // Load axios for http requests and add the Laravel CSRF token to the headers
 window.axios = require("axios");

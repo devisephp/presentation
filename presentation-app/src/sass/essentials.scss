@@ -1,8 +1,9 @@
-@tailwind preflight;
+@tailwind base;
 
 @tailwind components;
 
 // Examples
+@import "essentials/devise-overrides.scss";
 @import "essentials/layout.scss";
 // End examples
 

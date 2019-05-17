@@ -56,6 +56,19 @@ module.exports = {
             config.plugins.delete(`preload-${page}`);
             config.plugins.delete(`prefetch-${page}`);
         });
+
+        // Remove this if this is a normal project! Only for presentation Code blocks
+        config.module
+            .rule("vue")
+            .use("vue-loader")
+            .loader("vue-loader")
+            .tap(options => ({
+                ...options,
+                compilerOptions: {
+                    ...options.compilerOptions,
+                    preserveWhitespace: true
+                }
+            }));
     },
 
     css: {

@@ -1,0 +1,5 @@
+.btn {
+  @apply bg-blue-800 text-white text-xl p-4 rounded-sm;
+
+  background: linear-gradient(to right, hsl(239, 64, 60), hsl(239, 80, 60));  
+}

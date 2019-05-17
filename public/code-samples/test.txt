@@ -1,0 +1,20 @@
+@section('template')
+<div :style="{background-color: devise.backgroundColor.color}">
+ <h1>Hey there folks!</h1>
+</div>
+@endsection
+
+@section('component')
+<script>
+ var component = {
+   preview: ['{Bbg}'],
+   description: 'Empty container with child slices',
+   fields: {
+     backgroundColor: {
+       type: "color",
+       label: "Background Color",
+     }
+   }
+ }
+</script>
+@endsection
