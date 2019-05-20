@@ -1,6 +1,6 @@
 @section('template')
-<div :style="{background-color: devise.backgroundColor.color}">
- <h1>Hey there folks!</h1>
+<div>
+ <h1>@{{devise.title.text}}</h1>
 </div>
 @endsection
 
@@ -10,9 +10,9 @@
    preview: ['{Bbg}'],
    description: 'Empty container with child slices',
    fields: {
-     backgroundColor: {
-       type: "color",
-       label: "Background Color",
+     title: {
+       type: "text",
+       label: "Title",
      }
    }
  }
