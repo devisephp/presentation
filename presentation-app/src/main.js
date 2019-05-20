@@ -37,6 +37,12 @@ Vue.component("side-gradient", () =>
         /* webpackChunkName: "app-presentation" */ "./components/SideGradient.vue"
     )
 );
+Vue.component("three-d-logos", () =>
+    import(/* webpackChunkName: "app-presentation" */ "./components/Logos.vue")
+);
+Vue.component("three-d-scene", () =>
+    import(/* webpackChunkName: "app-presentation" */ "./components/Scene.vue")
+);
 
 // Load axios for http requests and add the Laravel CSRF token to the headers
 window.axios = require("axios");

@@ -1,5 +1,5 @@
 @section('template')
-<div>
+  <div>
   
 <svg width="319px" height="474px" viewBox="0 0 319 474" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>

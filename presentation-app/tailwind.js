@@ -196,7 +196,9 @@ module.exports = {
             outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
             none: "none"
         },
-        container: {},
+        container: {
+            center: true
+        },
         cursor: {
             auto: "auto",
             default: "default",
@@ -252,7 +254,8 @@ module.exports = {
                 '"Liberation Mono"',
                 '"Courier New"',
                 "monospace"
-            ]
+            ],
+            display: ["Abril Fatface", "Times", "serif"]
         },
         fontSize: {
             xs: "0.75rem",
