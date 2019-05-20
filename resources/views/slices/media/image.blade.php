@@ -1,6 +1,6 @@
 :@section('template')
 <div>
-  <img :data-src="devise.image.url">
+  <img :data-src="devise.image.url" style="width:100%">
 </div>
 @endsection
 

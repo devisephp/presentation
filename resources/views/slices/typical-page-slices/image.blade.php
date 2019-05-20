@@ -1,6 +1,6 @@
 @section('template')
 <div class="w-full">
-  <img v-if="devise.lazy.checked" v-devise-image.lazy="{image: devise.image, breakpoint: breakpoint}">
+  <img v-if="devise.lazy.checked" v-devise-image="{image: devise.image, breakpoint: breakpoint}">
   <img v-else :src="devise.image.media.orig_optimized">
 </div>
 
